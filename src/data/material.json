@@ -1,0 +1,707 @@
+{
+  "material": {
+    "BSG": {
+      "_0.8": {
+        "id": "017663010",
+        "namn": "Bottenskruv 0,8m Blå",
+        "vikt": "4,9",
+        "length": "0.8",
+        "amount": 0
+      },
+      "_0.6": {
+        "id": "017663020",
+        "namn": "Bottenskruv 0,6m Röd",
+        "vikt": "4.5",
+        "length": "0.6",
+        "amount": 0
+      },
+      "ledad": {
+        "id": "017663025",
+        "namn": "Bottenskruv Ledad",
+        "vikt": "5",
+        "length": "0.6",
+        "amount": 0
+      },
+      "bottendetalj": {
+        "id": "017663050",
+        "namn": "bottendetalj",
+        "vikt": "1",
+        "amount": 0
+      },
+      "klossar": {
+        "id": "017602080",
+        "namn": "klossar",
+        "vikt": "1",
+        "amount": 0
+      }
+    },
+    "spira": {
+      "_0,5": {
+        "id": "017663135",
+        "namn": "Spira 0,5m LW",
+        "vikt": "2.7",
+        "length": "0.5",
+        "amount": 0
+      },
+      "_1": {
+        "id": "017663130",
+        "namn": "Spira 1m LW",
+        "vikt": "5",
+        "length": "1",
+        "amount": 0
+      },
+      "_1,5": {
+        "id": "017663125",
+        "namn": "Spira 1,5m LW",
+        "vikt": "7",
+        "length": "1.5",
+        "amount": 0
+      },
+      "_2": {
+        "id": "017663115",
+        "namn": "Spira 2m LW",
+        "vikt": "9.5",
+        "length": "2",
+        "amount": 0
+      },
+      "_2.5": {
+        "id": "017663110",
+        "namn": "Spira 2,5m LW",
+        "vikt": "12",
+        "length": "2.5",
+        "amount": 0
+      },
+      "_3": {
+        "id": "017663198",
+        "namn": "Spira 3m LW",
+        "vikt": "13.7",
+        "length": "3",
+        "amount": 0
+      }
+    },
+    "HS": {
+      "_0.73": {
+        "id": "017663250",
+        "namn": "Horisontalstag LW 0,73m",
+        "vikt": "3",
+        "length": "0.73",
+        "amount": 0
+      },
+      "_1.09": {
+        "id": "017663240",
+        "namn": "Horisontalstag LW 1.09m",
+        "vikt": "4",
+        "length": "1.09",
+        "amount": 0
+      },
+      "_1.4": {
+        "id": "017663235",
+        "namn": "Horisontalstag LW 1.4m",
+        "vikt": "5",
+        "length": "1.4",
+        "amount": 0
+      },
+      "_1.57": {
+        "id": "017663230",
+        "namn": "Horisontalstag LW 1.57m",
+        "vikt": "5.5",
+        "length": "1.57",
+        "amount": 0
+      },
+      "_2.07": {
+        "id": "017663225",
+        "namn": "Horisontalstag LW 2.07m",
+        "vikt": "7.5",
+        "length": "2.07",
+        "amount": 0
+      },
+      "_2.57": {
+        "id": "017663220",
+        "namn": "Horisontalstag LW 2.57m",
+        "vikt": "8.5",
+        "length": "2.57",
+        "amount": 0
+      },
+      "_3.07": {
+        "id": "017663215",
+        "namn": "Horisontalstag LW 3.07m",
+        "vikt": "10",
+        "length": "3.07",
+        "amount": 0
+      }
+    },
+    "DS": {
+      "_0.73": {
+        "id": "017664270",
+        "namn": "Diagonalstag LW 0,73x2,00m (röd)",
+        "vikt": "3.4",
+        "length": "0.73",
+        "amount": 0
+      },
+      "_1.09": {
+        "id": "017664260",
+        "namn": "Diagonalstag LW 1,09x2,00m ()",
+        "vikt": "5",
+        "length": "1.09",
+        "amount": 0
+      },
+      "_1.4": {
+        "id": "017664250",
+        "namn": "Diagonalstag LW 1,4x2,00m ()",
+        "vikt": "6.5",
+        "length": "1.4",
+        "amount": 0
+      },
+      "_1.57": {
+        "id": "017664240",
+        "namn": "Diagonalstag LW 1.57x2,00m (röd)",
+        "vikt": "7.2",
+        "length": "1.57",
+        "amount": 0
+      },
+      "_2.07": {
+        "id": "017664230",
+        "namn": "Diagonalstag LW 2,07x2,00m (röd)",
+        "vikt": "8.0",
+        "length": "2.07",
+        "amount": 0
+      },
+      "_2.57": {
+        "id": "017664220",
+        "namn": "Diagonalstag LW 2,57x2,00m (röd)",
+        "vikt": "9.5",
+        "length": "2.57",
+        "amount": 0
+      },
+      "_3.07": {
+        "id": "017664218",
+        "namn": "Diagonalstag LW 3,07x2,00m (röd)",
+        "vikt": "10.5",
+        "length": "3.07",
+        "amount": 0
+      }
+    },
+    "U-BOM": {
+      "_0.36": {
+        "id": "017663345",
+        "namn": "U-tvärbom 0,36m förstärkt",
+        "vikt": "2",
+        "length": "0.36",
+        "platform_0.32":1,
+        "platform_0.19":0,
+        "amount": 0
+      },
+      "_0.73": {
+        "id": "017663340",
+        "namn": "U-tvärbom 0,73m förstärkt",
+        "vikt": "3",
+        "length": "0.73",
+        "platform_0.32":2,
+        "platform_0.19":0,
+        "amount": 0
+      },
+      "_1.09": {
+        "id": "017663335",
+        "namn": "U-tvärbom 1,09m förstärkt",
+        "vikt": "4.8",
+        "length": "1.09",
+        "platform_0.32":3,
+        "platform_0.19":0,
+        "amount": 0
+      },
+      "_1.4": {
+        "id": "017663330",
+        "namn": "U-tvärbom 1,4m förstärkt",
+        "vikt": "5.3",
+        "length": "1.4",
+        "platform_0.32":4,
+        "platform_0.19":0,
+        "amount": 0
+      },
+      "_1.57": {
+        "id": "017663314",
+        "namn": "U-tvärbom 1,57m förstärkt",
+        "vikt": "6.5",
+        "length": "1.57",
+        "platform_0.32":4,
+        "platform_0.19":1,
+        "amount": 0
+      },
+      "_2.07": {
+        "id": "017663312",
+        "namn": "U-tvärbom 2,07m förstärkt",
+        "vikt": "14",
+        "length": "2.07",
+        "platform_0.32":6,
+        "platform_0.19":0,
+        "amount": 0
+      },
+      "_2.57": {
+        "id": "017663310",
+        "namn": "U-tvärbom 2,57m förstärkt",
+        "vikt": "15.7",
+        "length": "2.57",
+        "platform_0.32":7,
+        "platform_0.19":1,
+        "amount": 0
+      },
+      "_3.07": {
+        "id": "017663308",
+        "namn": "U-tvärbom 3,07m förstärkt",
+        "vikt": "19",
+        "length": "3.07",
+        "platform_0.32":9,
+        "platform_0.19":0,
+        "amount": 0
+      }
+    },
+    "platformlås": {
+      "_0.36": {
+        "id": "017663995",
+        "namn": "Plattformslås 0,39m förstärkt",
+        "vikt": "0.6",
+        "length": "0.36",
+        "amount": 0
+      },
+      "_0.73": {
+        "id": "017663992",
+        "namn": "Plattformslås 0,73m förstärkt",
+        "vikt": "1.3",
+        "length": "0.73",
+        "amount": 0
+      },
+      "_1.09": {
+        "id": "017663987",
+        "namn": "Plattformslås 1,09m förstärkt",
+        "vikt": "1.8",
+        "length": "1.09",
+        "amount": 0
+      },
+      "_1.4": {
+        "id": "017663982",
+        "namn": "Plattformslås 1,4m förstärkt",
+        "vikt": "2.3",
+        "length": "1.4",
+        "amount": 0
+      },
+      "_1.57": {
+        "id": "017663975",
+        "namn": "Plattformslås 1,57m förstärkt",
+        "vikt": "5.9",
+        "length": "1.5",
+        "amount": 0
+      },
+      "_2.07": {
+        "id": "017663922",
+        "namn": "Plattformslås 2,07m förstärkt",
+        "vikt": "7.9",
+        "length": "2.07",
+        "amount": 0
+      },
+      "_2.57": {
+        "id": "017663917",
+        "namn": "Plattformslås 2,57m förstärkt",
+        "vikt": "9.9",
+        "length": "2.57",
+        "amount": 0
+      },
+      "_3.07": {
+        "id": "017663912",
+        "namn": "Plattformslås 3,07m förstärkt",
+        "vikt": "11.9",
+        "length": "3.07",
+        "amount": 0
+      }
+    },
+    "sparklist": {
+      "__0.36": {
+        "id": "017664050",
+        "namn": "Sparklist 0,36m",
+        "vikt": "1",
+        "length": "0.36",
+        "amount": 0
+      },
+      "__0.73": {
+        "id": "017664040",
+        "namn": "Sparklist 0,73m",
+        "vikt": "1.5",
+        "length": "0.73",
+        "amount": 0
+      },
+      "__1.09": {
+        "id": "017664035",
+        "namn": "Sparklist 1,09m",
+        "vikt": "1.5",
+        "length": "1.09",
+        "amount": 0
+      },
+      "_1.4": {
+        "id": "017664030",
+        "namn": "Sparklist 1,4m",
+        "vikt": "3.4",
+        "length": "1.4",
+        "amount": 0
+      },
+      "_1.57": {
+        "id": "017664025",
+        "namn": "Sparklist 1,57m",
+        "vikt": "3.5",
+        "length": "1.57",
+        "amount": 0
+      },
+      "_2.07": {
+        "id": "017664020",
+        "namn": "Sparklist 2,07m",
+        "vikt": "4.5",
+        "length": "2.07",
+        "amount": 0
+      },
+      "_2.57": {
+        "id": "017664015",
+        "namn": "Sparklist 2,57m",
+        "vikt": "5.7",
+        "length": "2.57",
+        "amount": 0
+      },
+      "_3.07": {
+        "id": "017664010",
+        "namn": "Sparklist 3,07m",
+        "vikt": "7.1",
+        "length": "3.07",
+        "amount": 0
+      }
+    },
+    "ALU-trappa": {
+      "_1": {
+        "id": "000000000",
+        "namn": "Alu-trappa 1m för U-bom",
+        "vikt": "7",
+        "length": "1",
+        "amount": 0
+      },
+      "_1.5": {
+        "id": "000000000",
+        "namn": "Alu-trappa 1,5m för U-bom",
+        "vikt": "10",
+        "length": "1.5",
+        "amount": 0
+      },
+      "_2.57": {
+        "id": "017664115",
+        "namn": "Alu-trappa 2,57m för U-bom",
+        "vikt": "20",
+        "length": "2.57",
+        "amount": 0
+      },
+      "_3.07": {
+        "id": "017664110",
+        "namn": "Alu-trappa 3,07m för U-bom",
+        "vikt": "26",
+        "length": "3.07",
+        "amount": 0
+      }
+    },
+    "trappräcke": {
+      "_2.57": {
+        "id": "017664210",
+        "namn": "Trappräcke 2,57 för rör",
+        "vikt": "19",
+        "length": "2.57",
+        "amount": 0
+      },
+      "_3.07": {
+        "id": "017664215",
+        "namn": "Trappräcke 3.07 för rör",
+        "vikt": "20.1",
+        "length": "3.07",
+        "amount": 0
+      }
+    },
+    "Stålplank_0.32": {
+      "_0.73": {
+        "id": "017663695",
+        "namn": "Stålplank T4 0,73x0,32m",
+        "vikt": "6",
+        "length": "0.73",
+        "amount": 0
+      },
+      "_1.09": {
+        "id": "017663685",
+        "namn": "Stålplank T4 1,09x0,32m",
+        "vikt": "8.3",
+        "length": "1.09",
+        "amount": 0
+      },
+      "_1.4": {
+        "id": "017663630",
+        "namn": "Stålplank T4 1,4x0,32m",
+        "vikt": "10.6",
+        "length": "1.4",
+        "amount": 0
+      },
+      "_1.57": {
+        "id": "017663675",
+        "namn": "Stålplank T4 1,57x0,32m",
+        "vikt": "11.6",
+        "length": "1.57",
+        "amount": 0
+      },
+      "_2.07": {
+        "id": "017663670",
+        "namn": "Stålplank T4 2,07x0,32m",
+        "vikt": "14.9",
+        "length": "2.07",
+        "amount": 0
+      },
+      "_2.57": {
+        "id": "017663665",
+        "namn": "Stålplank T4 2,57x0,32m",
+        "vikt": "18.2",
+        "length": "2.57",
+        "amount": 0
+      },
+      "_3.07": {
+        "id": "017663660",
+        "namn": "Stålplank T4 3,07x0,32m",
+        "vikt": "21.5",
+        "length": "3.07",
+        "amount": 0
+      }
+    },
+    "Stålplank_0.19": {
+      "_0.73": {
+        "id": "017663540",
+        "namn": "Stålplank 0,73x0,19m",
+        "vikt": "5.1",
+        "length": "0.73",
+        "amount": 0
+      },
+      "_1.09": {
+        "id": "017663535",
+        "namn": "Stålplank 1,09x0,19m",
+        "vikt": "6.4",
+        "length": "1.09",
+        "amount": 0
+      },
+      "_1.4": {
+        "id": "017663530",
+        "namn": "Stålplank 1,4x0,19m",
+        "vikt": "8",
+        "length": "1.4",
+        "amount": 0
+      },
+      "_1.57": {
+        "id": "017663525",
+        "namn": "Stålplank 1,57x0,19m",
+        "vikt": "8.5",
+        "length": "1.57",
+        "amount": 0
+      },
+      "_2.07": {
+        "id": "017663520",
+        "namn": "Stålplank 2,07x0,19m",
+        "vikt": "10.2",
+        "length": "2.07",
+        "amount": 0
+      },
+      "_2.57": {
+        "id": "017663515",
+        "namn": "Stålplank 2,57x0,19m",
+        "vikt": "13.2",
+        "length": "2.57",
+        "amount": 0
+      },
+      "_3.07": {
+        "id": "017663510",
+        "namn": "Stålplank 3,07x0,19m",
+        "vikt": "15.3",
+        "length": "3.07",
+        "amount": 0
+      }
+    },
+    "accesories": {
+      "KF": {
+        "id": "017630120",
+        "namn": "Normalkoppling",
+        "vikt": "1.3",
+        "amount": 0
+      },
+      "KV": {
+        "id": "017630120",
+        "namn": "Vridkoppling",
+        "vikt": "1.5",
+        "amount": 0
+      },
+      "fäste_för_trappräcke": {
+        "id": "017664205",
+        "namn": "Fäste för trappräcke",
+        "vikt": "0.7",
+        "amount": 0
+      },
+      "skarvtap": {
+        "för_koppling": {
+          "id": "017630139",
+          "namn": "Skarvtapp m halvkoppling",
+          "vikt": "1.8",
+          "amount": 0
+        },
+        "för_U-bom": {
+          "id": "017664990",
+          "namn": "Skarvtapp för U-profil",
+          "vikt": "1.8",
+          "amount": 0
+        }
+      },
+      "plugg": {
+        "id": "05999995",
+        "namn": "Plugg 14mm",
+        "vikt": "0.01",
+        "amount": 0
+      },
+      "ögla": {
+        "trä": {
+          "_0.15cm": {
+            "id": "057602000",
+            "namn": "Ögelskruv 15cm X 14mm",
+            "vikt": "0.01",
+            "length": "0.15",
+            "amount": 0
+          },
+          "_0.35cm": {
+            "id": "057602000",
+            "namn": "Ögelskruv 35cm X 14mm",
+            "vikt": "0.01",
+            "length": "0.35",
+            "amount": 0
+          }
+        },
+        "betong": {
+          "_0.15": {
+            "id": "057602000",
+            "namn": "Ögelskruv 15cm X 10mm",
+            "vikt": "0.01",
+            "length": "0.15",
+            "amount": 0
+          },
+          "_0.35": {
+            "id": "057602000",
+            "namn": "Ögelskruv 35cm X 10mm",
+            "vikt": "0.01",
+            "length": "0.35",
+            "amount": 0
+          }
+        },
+        "M10": {
+          "id": "05999995",
+          "namn": "Lyftögla M10",
+          "vikt": "0.1",
+          "amount": 0
+        }
+      },
+      "förankring": {
+        "_0.3": {
+          "id": "017630392",
+          "namn": "Förankringsrör 0,30m vfz",
+          "vikt": "1",
+          "length": "0.3",
+          "amount": 0
+        },
+        "_0.5": {
+          "id": "017630392",
+          "namn": "Förankringsrör 0,50m vfz",
+          "vikt": "2",
+          "length": "0.5",
+          "amount": 0
+        },
+        "_0.65": {
+          "id": "017630390",
+          "namn": "Förankringsrör 0,65m vfz",
+          "vikt": "2.5",
+          "length": "0.65",
+          "amount": 0
+        },
+        "_0.75": {
+          "id": "017630389",
+          "namn": "Förankringsrör 0,75m vfz",
+          "vikt": "3",
+          "length": "0.75",
+          "amount": 0
+        },
+        "_1": {
+          "id": "017630385",
+          "namn": "Förankringsrör 1m vfz",
+          "vikt": "4",
+          "length": "1",
+          "amount": 0
+        },
+        "_1.2": {
+          "id": "017630375",
+          "namn": "Förankringsrör 1,2m vfz",
+          "vikt": "4.8",
+          "length": "1.2",
+          "amount": 0
+        }
+      },
+      "borton_rör": {
+        "_0.5": {
+          "id": "017630090",
+          "namn": "Ställningsrör 0,5m Burton",
+          "vikt": "2.3",
+          "length": "0.5",
+          "amount": 0
+        },
+        "_1": {
+          "id": "017630080",
+          "namn": "Ställningsrör 1m Burton",
+          "vikt": "4.5",
+          "length": "1",
+          "amount": 0
+        },
+        "_1.5": {
+          "id": "017630070",
+          "namn": "Ställningsrör 1,5m Burton",
+          "vikt": "6.8",
+          "length": "1.5",
+          "amount": 0
+        },
+        "_2": {
+          "id": "017630060",
+          "namn": "Ställningsrör 2m Burton",
+          "vikt": "9",
+          "length": "2",
+          "amount": 0
+        },
+        "_3.0": {
+          "id": "017630050",
+          "namn": "Ställningsrör 3m Burton",
+          "vikt": "13.5",
+          "length": "3",
+          "amount": 0
+        },
+        "_4": {
+          "id": "017630040",
+          "namn": "Ställningsrör 4m Burton",
+          "vikt": "16.7",
+          "length": "4",
+          "amount": 0
+        },
+        "_5": {
+          "id": "017630030",
+          "namn": "Ställningsrör 5m Burton",
+          "vikt": "22.7",
+          "length": "5",
+          "amount": 0
+        },
+        "_6": {
+          "id": "017630020",
+          "namn": "Ställningsrör 6m Burton",
+          "vikt": "25",
+          "length": "6",
+          "amount": 0
+        }
+      }
+    }
+  },
+  "tillverkare": "Layher",
+  "vikt-type": "Kg"
+}
