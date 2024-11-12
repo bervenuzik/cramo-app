@@ -10,7 +10,7 @@ function MainWindow(){
     const{data}  = useContext(Context)
 
     return(
-        <div className="grow flex flex-col items-center ">
+        <div className="grow  max-h-[100vh] flex flex-col items-center">
             {data.material == undefined && <GreetingWindow/>}
             {(!data.material && data.error) && <ErrorMessage message={data.error.massage}/>}
             {data.material && <MaterialList/>}

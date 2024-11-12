@@ -1,4 +1,8 @@
 import materialData from "../data/material.json";
+import heigthValidation from "./validations/heightValidationForNew.js"
+import widthValidation from "./validations/widthValidationForNew.js"
+import lengthValidation from "./validations/lengthValidatorForNew.js"
+import cloneDeep from 'lodash/cloneDeep';
 const STAIRS_DEFAULD_WIDTH = 0.73;
 const MONTAGE_POINTS = 6;
 let material;
@@ -7,9 +11,17 @@ let fullLevels = 0;
 let restHeight = 0;
 
 
+export function validateDimentions(height , width , length){
+    const isWidthValid = widthValidation(width);
+    const isHeigthValid = heigthValidation(height)
+    const isLengthValid = lengthValidation(length)
+    if( isHeigthValid && isLengthValid && isWidthValid) return true;
+    return false;
+}
+
 //TODO: IMPROVE VALIDATION
-export default function calculateScafold(height , width , length){
-    material = materialData.material
+export default function calculateNewScafold(height , width , length){
+    material = cloneDeep(materialData.material);
     // if(!validateDimentions(height ,width ,length)) return;
     calculateLevels(height);
     calculateSpira(height);
@@ -24,13 +36,13 @@ export default function calculateScafold(height , width , length){
     };
 }
 
-export function calculateStairfForExistingScafolding( height , length){
-    material = materialData.material
-    if(!validateHeight(height)){
+export function calculatefForExistingScafolding( height , length){
+    material = cloneDeep(materialData.material);
+    if(!heigthValidation(height)){
         return {
             material:null , 
             error:{
-                message:"Unvalid Height , shoul be bigger then 2m",
+                message:"Invalid Height , shoul be bigger then 2m",
             }}
     }
     calculateLevels(height);
@@ -43,26 +55,9 @@ export function calculateStairfForExistingScafolding( height , length){
     };
 
 } 
-export function validateDimentions(height , width , length){
-    const isWidthValid = validateWidth(width);
-    const isHeigthValid = validateHeight(height)
-    const isLengthValid = validateLength(length)
-    if( isHeigthValid && isLengthValid && isWidthValid) return true;
-    return false;
-}
 
-export function validateWidth(width){
-    if(width < 0.73 || width >3.8) return false;
-    return true;
-}
- export function validateHeight(height){
-    if(height <=2.1) return false;
-    return true;
-}
-export function validateLength(length){
-    if(length == 2.57 || length == 3.07) return true;
-    return false;
-}
+
+
 export function calculateLevels(heigh){
      fullLevels = Number.parseInt(heigh/2);
      restHeight = (heigh % 2).toFixed(2);
@@ -88,7 +83,7 @@ export function calculateSpira(heigth , montagePoints = MONTAGE_POINTS){
             spira = spira[spiraKey];
             const spiraLength = +spira.length;
             if(restOfHeigth >= spiraLength){
-                material["spira"][spiraKey].amount += montagePoints
+                material["spira"][spiraKey].amount = montagePoints
                 break;
             }
         }
@@ -172,7 +167,6 @@ const result = []
     recursivePushing(obj);
     return result;
 }
-
 
 
 

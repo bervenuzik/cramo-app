@@ -4,8 +4,8 @@ function GreetingWindow(){
 
     
     return(
-        <div>
-            <h1>Our Top Drinks</h1>
+        <div className="p-2 border-stone-100">
+            <h1>FYLL I MÅTT OCH TRYCK PÅ KALKULERA </h1>
         </div>
     )
 }
