@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Context } from "./AppContext.jsx";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -13,6 +13,8 @@ import Input from "./Input.jsx";
 import EditableStyledTableCell from "./EditableStyledTableCell.jsx";
 import cloneDeep from "lodash/cloneDeep";
 import Button from "./Button.jsx";
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -43,7 +45,25 @@ function MaterialList() {
   const { data, updateData, addToHistory, history } = useContext(Context);
   const materialList = cloneDeep(data.material);
   const filtredMaterialList = materialList.filter((item) => item.amount > 0);
+  const tableRef = useRef();
 
+  const generatePdf = async () => {
+    const content = tableRef.current;
+    const canvas = await html2canvas(content);
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF();
+    const imgProps = pdf.getImageProperties(imgData);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+    // Устанавливаем размеры и позиционирование таблицы в PDF
+    const margin = 10;
+    const tableWidth = pdfWidth - 2 * margin;
+    const tableHeight = (imgProps.height * tableWidth) / imgProps.width;
+
+    pdf.addImage(imgData, 'PNG', margin, margin, tableWidth, tableHeight);
+    pdf.save('document.pdf');
+  };
   function changeRedactingMode() {
     setEditMode((prev) => {
       const newValue = !prev;
@@ -97,8 +117,11 @@ function MaterialList() {
       <Button style={{margin:"10px 10px"}} onClick={changeRedactingMode}>
         {editMode ? "Click to save" : "Redigera listan"}
       </Button>
-      <TableContainer sx={{ width: "100%" }} component={Paper}>
-        <Table aria-label="customized table">
+      {editMode ? null : <Button style={{margin:"10px 10px"}} onClick={generatePdf}>
+        Spara pdf
+      </Button>}
+      <TableContainer ref={tableRef} sx={{ width: "100%" , margin:"20px 20px" }} component={Paper}>
+        <Table size={"small"}  aria-label="customized table">
           <TableHead>
             <TableRow>
               <StyledTableCell align="right">Art. nummer</StyledTableCell>
