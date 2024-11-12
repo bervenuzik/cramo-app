@@ -1,5 +1,5 @@
 import { createContext , useState } from "react";
-import PropTypes from 'prop-types';
+import PropTypes, { func } from 'prop-types';
 import calculateNewScafold from "../functions/calculateStairs.js"
 import {calculatefForExistingScafolding} from "../functions/calculateStairs.js"
 
@@ -8,9 +8,11 @@ import {calculatefForExistingScafolding} from "../functions/calculateStairs.js"
 
 export const Context = createContext({
     data:{},
+    resetData:()=>{},
     heigth:Number,
     history:[],
     addToHistory:()=>{},
+    updateData:()=>{},
     makeCalculationForNew:()=>{},
     makeCalculationForExisting:()=>{},
 });
@@ -18,18 +20,33 @@ export const Context = createContext({
 
 
 function AppContext({children}){
-    const [data , setData] = useState({
-        material: undefined,
-        error:null,
-    });
+    const initialData = {
+            material: undefined,
+            error:null,
+    }
+    const [data , setData] = useState(initialData);
     const [history , setHystory] = useState([]);
     
     const contextValue = {
         data,
+        updateData,
+        resetData,
         history,
         addToHistory,
         makeCalculationForNew,
         makeCalculationForExisting,
+    }
+
+    function updateData(data){
+        setData((prev)=>{return {
+                ...prev,
+                material:data,
+        }
+    })
+    }
+
+    function resetData(){
+        setData(initialData)
     }
 
     function addToHistory(material){
@@ -41,16 +58,14 @@ function AppContext({children}){
 
     function makeCalculationForNew(heigth, width, length ){
         const results = calculateNewScafold(heigth, width, length );
-        setData((prev)=>({
-            prev,
+        setData(()=>({
             ...results,
         }
     ))
     }
     function makeCalculationForExisting(heigth , length){
         const results = calculatefForExistingScafolding(heigth, length );
-        setData((prev)=>({
-            prev,
+        setData(()=>({
             ...results,
         }
     ))

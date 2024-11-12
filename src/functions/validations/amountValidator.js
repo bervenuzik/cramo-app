@@ -1,5 +1,6 @@
 function amountValidator(amount){
-    return Number.isInteger(amount);
+    const isAmountValid = /^\d+$/.test(amount);
+    return isAmountValid;
 }
 
 export default amountValidator

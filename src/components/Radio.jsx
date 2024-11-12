@@ -1,15 +1,18 @@
 
 function Radio({ options, onChange, label, value }) {
+
+    // className="flex items-center justify-end pr-4 inset-0 absolute cursor-pointer "
   return (
-    <span className="uppercase text-stone-950 md:text-l w-full flex flex-col gap-3 items-start ">
+    <span className="uppercase m-auto mt-2  flex gap-3 items-center ">
       {label}
-      <form className="w-full flex justify-around gap-5">
+      <form className="w-full flex gap-5">
         {options.map((option, index) => (
           <span
             key={index}
-            className="block w-[100px] relative border-solid border-gray-500 border-[2px] rounded-md p-3"
+            className="flex gap-2 relative border-solid border-gray-500 border-[2px] rounded-md p-3 "
           >
             <input
+            className="p-0"
               checked={option == value}
               onChange={(ev) => onChange(ev.target.value)}
               id={option}
@@ -18,7 +21,7 @@ function Radio({ options, onChange, label, value }) {
               name={"radioGroup" + label}
             />
             <label
-              className="flex items-center justify-end pr-4 inset-0 absolute cursor-pointer "
+              className="cursor-pointer "
               htmlFor={option}
             >
               {option}
