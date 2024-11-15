@@ -8,13 +8,10 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
-import { FormControlLabel, Switch } from "@mui/material";
-import Input from "./Input.jsx";
 import EditableStyledTableCell from "./EditableStyledTableCell.jsx";
 import cloneDeep from "lodash/cloneDeep";
 import Button from "./Button.jsx";
-import { jsPDF } from 'jspdf';
-import html2canvas from 'html2canvas';
+import showPDF from "../functions/openREFasPDF.js"
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -42,28 +39,13 @@ const NameTableCell = styled(StyledTableCell)`
 
 function MaterialList() {
   const [editMode, setEditMode] = useState(false);
-  const { data, updateData, addToHistory, history } = useContext(Context);
+  const { data, updateData} = useContext(Context);
   const materialList = cloneDeep(data.material);
   const filtredMaterialList = materialList.filter((item) => item.amount > 0);
   const tableRef = useRef();
 
-  const generatePdf = async () => {
-    const content = tableRef.current;
-    const canvas = await html2canvas(content);
-    const imgData = canvas.toDataURL('image/png');
-    const pdf = new jsPDF();
-    const imgProps = pdf.getImageProperties(imgData);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+  
 
-    // Устанавливаем размеры и позиционирование таблицы в PDF
-    const margin = 10;
-    const tableWidth = pdfWidth - 2 * margin;
-    const tableHeight = (imgProps.height * tableWidth) / imgProps.width;
-
-    pdf.addImage(imgData, 'PNG', margin, margin, tableWidth, tableHeight);
-    pdf.save('document.pdf');
-  };
   function changeRedactingMode() {
     setEditMode((prev) => {
       const newValue = !prev;
@@ -117,9 +99,11 @@ function MaterialList() {
       <Button style={{margin:"10px 10px"}} onClick={changeRedactingMode}>
         {editMode ? "Click to save" : "Redigera listan"}
       </Button>
-      {editMode ? null : <Button style={{margin:"10px 10px"}} onClick={generatePdf}>
-        Spara pdf
-      </Button>}
+      {editMode ? null : 
+      <Button style={{margin:"10px 10px"}} onClick={()=>showPDF(tableRef)}>
+        Öppna PDF fil
+      </Button>
+    }
       <TableContainer ref={tableRef} sx={{ width: "100%" , margin:"20px 20px" }} component={Paper}>
         <Table size={"small"}  aria-label="customized table">
           <TableHead>

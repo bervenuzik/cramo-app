@@ -1,4 +1,4 @@
-import cramoLogo from "../../public/cramo-logo.svg"
+import cramoLogo from "../../public/Images/cramo-logo.svg"
 import InputForDimensions from "./InputForDimensions"
 
 
