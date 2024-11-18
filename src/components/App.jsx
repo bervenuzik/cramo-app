@@ -5,7 +5,7 @@ import MainWindow from "./MainWindow";
 function App() {
   //
   return (
-    <main className="flex flex-row h-screen bg-red-100">
+    <main className="flex flex-row h-screen ">
       <InputBar></InputBar>
       <MainWindow></MainWindow>
     </main>
