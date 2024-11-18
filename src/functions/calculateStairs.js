@@ -22,12 +22,13 @@ export function validateDimentions(height , width , length){
 //TODO: IMPROVE VALIDATION
 export default function calculateNewScafold(height , width , length){
     material = cloneDeep(materialData.material);
-    // if(!validateDimentions(height ,width ,length)) return;
+
     calculateLevels(height);
     calculateSpira(height);
     calculateFirstSide(width , length);
     calculateSecondSide(length);
     addStairs(length);
+    calculateAttachments(fullLevels)
 
     const results = getResultListOfMaterial(material);
     return {
@@ -88,8 +89,16 @@ export function calculateSpira(heigth , montagePoints = MONTAGE_POINTS){
             }
         }
     }
-    
+}
 
+function calculateAttachments(levels){
+    const _0_5m_väggfäste = levels * 2;
+    const _0_15cm_ögla = levels * 2;
+    const KF = levels * 2;
+    material["accesories"]["KF"].amount = KF;
+    material["accesories"]["plugg"].amount = _0_15cm_ögla;
+    material["accesories"]["ögla"]["betong"]["_0.15"].amount = _0_15cm_ögla;
+    material["accesories"]["förankring"]["_0.5"].amount = _0_15cm_ögla;
 }
 
 
@@ -136,7 +145,8 @@ export function calculateFirstSide(width  , length ){
 export function calculateSecondSide(length ){
     //add u-boms for stairs
     material["HS"][`_${length}`].amount += fullLevels * 4;
-    material["HS"][`_2.07`].amount = 2;
+    if(length == "2.57") material["HS"][`_2.07`].amount = 2;
+    if(length == "3.07") material["HS"][`_2.57`].amount = 2;
     material["accesories"][`skarvtap`]["för_koppling"].amount = 1;
     material["spira"]["_1"].amount += 1
 

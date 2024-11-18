@@ -44,6 +44,11 @@ function MaterialList() {
   const filtredMaterialList = materialList.filter((item) => item.amount > 0);
   const tableRef = useRef();
 
+  const filtredMaterial = filtredMaterialList.map((item) => tableRow(item));
+  const notFiltredMaterial = materialList.map((item) => tableRow(item));
+  const showableMaterial = editMode ? notFiltredMaterial : filtredMaterial
+  const currentList = editMode ? materialList : filtredMaterialList;
+
   
 
   function changeRedactingMode() {
@@ -67,32 +72,46 @@ function MaterialList() {
     };
   }
 
-  function tableRow(item) {
+  function tableRow({id , namn = "" , vikt , amount, isSummary}) {
+    const artNumber = id && !isSummary ? id : "";
+    const name = namn;
+    const weight = vikt && !isSummary ? vikt : "";
+    const totalWeight = vikt && !isSummary? Number.parseFloat(vikt * amount).toFixed(1) : ""
+
     return (
-      <StyledTableRow key={item.namn + item.id}>
+      <StyledTableRow key={name + id}>
         <StyledTableCell component="th" scope="row">
-          {item.id}
+          {artNumber}
         </StyledTableCell>
-        <NameTableCell align="left">{item.namn}</NameTableCell>
-        <StyledTableCell align="right">{item.vikt}</StyledTableCell>
+        <NameTableCell align="left">{name}</NameTableCell>
+        <StyledTableCell align="right">{weight}</StyledTableCell>
         <StyledTableCell align="right">
-          {Number.parseFloat(item.vikt * item.amount).toFixed(1)}
+          {totalWeight}
         </StyledTableCell>
-        <EditableStyledTableCell
+        {!isSummary ?<EditableStyledTableCell
           align="center"
-          initialAmount={"" + item.amount}
+          initialAmount={"" + amount}
           editMode={editMode}
           onChange={(newValue) => {
-            updateItemAmount(item.namn, newValue);
+            updateItemAmount(namn, newValue);
           }}
         >
-          {item.amount ? item.amount : 0}
-        </EditableStyledTableCell>
+          {amount ? amount : 0}
+        </EditableStyledTableCell>: <StyledTableCell align="center">{""}</StyledTableCell>}
       </StyledTableRow>
     );
   }
-  const filtredMaterial = filtredMaterialList.map((item) => tableRow(item));
-  const notFiltredMaterial = materialList.map((item) => tableRow(item));
+  function calculateTotalVikt(list){
+    const initialValue = 0;
+    const totalVikt = list.reduce(
+      (accumulator, item) => accumulator + (+item.amount * +item.vikt),
+      initialValue,
+    );
+    return Number.parseFloat(totalVikt).toFixed(1)
+  }
+
+  const SummaryRow = editMode? null :   tableRow({id:"", namn:"TOTAL VIKT: \t" + calculateTotalVikt(filtredMaterialList) + "(kg)", isSummary:true})
+  
 
   return (
     <div style={{ maxHeight: "100%", overflowY: "auto" }}>
@@ -120,7 +139,8 @@ function MaterialList() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {editMode ? notFiltredMaterial : filtredMaterial}
+            {showableMaterial}
+            {SummaryRow}
           </TableBody>
         </Table>
       </TableContainer>
