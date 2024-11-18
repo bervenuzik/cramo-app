@@ -114,7 +114,7 @@ function MaterialList() {
   
 
   return (
-    <div style={{ maxHeight: "100%", overflowY: "auto" }}>
+    <div style={{ maxHeight: "100%", minWidth:"fit-content", overflowY: "auto" , overflowX:"none"}}>
       <Button style={{margin:"10px 10px"}} onClick={changeRedactingMode}>
         {editMode ? "Click to save" : "Redigera listan"}
       </Button>
@@ -123,7 +123,7 @@ function MaterialList() {
         Öppna PDF fil
       </Button>
     }
-      <TableContainer ref={tableRef} sx={{ width: "100%" , margin:"20px 20px" }} component={Paper}>
+      <TableContainer ref={tableRef} sx={{ width: "fit-content" , margin:"20px 20px" }} component={Paper}>
         <Table size={"small"}  aria-label="customized table">
           <TableHead>
             <TableRow>
